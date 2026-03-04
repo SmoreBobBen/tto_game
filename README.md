@@ -57,6 +57,11 @@ This is an implementation for a basic memory game using buttons and lights. The 
 In hardware the chip would be tested by just playing the game.
 To test in simulation, I created a simple python script that just plays the game normally, then tested cases where the player wins and loses at different points in the game. Simply run that python script to observe the game in practice.
 
+Simulation notes:
+- It is known that pressing multiple buttons at the same time always counts as the correct input. However, this is not practically possible for a real player given any reasonable clock speed.
+- The behavior for rapid changes in input is undefined, but again, it is unlikely a human player could change the button presses at a rate faster than 25 thousand times per second
+- Human players are also unlikely to have the precision to manipulate the pseudo-random number generator, so a simple counter is probably enough.
+
 ## External hardware
 
 This project assumes the usage of some PMOD buttons and LED outputs for the gameplay. The input and output signals are active-high, but that can be changed fairly easily by changing the code to invert the btnX_UNSAFE and LedX signals.

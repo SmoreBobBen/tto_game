@@ -91,7 +91,7 @@ async def test_project(dut):
     await FallingEdge(dut.clk)
     await FallingEdge(dut.clk)
     await FallingEdge(dut.clk)
-    for _ in range(15):
+    for _ in range(16):
         pattern = list()
         while (dut.uo_out.value != 0x00):
             # print("Appending to pattern: ", hex(dut.uo_out.value))
@@ -100,8 +100,8 @@ async def test_project(dut):
             await FallingEdge(dut.clk)
             dut.ui_in.value = 0x01
             await FallingEdge(dut.clk)
-            dut.ui_in.value = 0x00
             await FallingEdge(dut.clk)
+            dut.ui_in.value = 0x00
             await FallingEdge(dut.clk)
             await FallingEdge(dut.clk)
             await FallingEdge(dut.clk)
