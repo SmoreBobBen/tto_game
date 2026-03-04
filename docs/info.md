@@ -9,12 +9,20 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This is an implementation for a basic memory game using buttons and lights. The game operates as follows:
+- On startup, all of the LEDS are on. This indicates the chip is on and in its initialization state.
+- When any button is pressed, a pseudorandom LED is lit up. It will stay lit until any button is pressed.
+- The LEDs turn off and the game waits for player input. If the correct button is pressed, the LEDs show a new pattern with one new light prepended to the start.
+- This cycle continues until the player loses, to a maximum of 16 cycles.
+- Playing beyond 16 cycles is undefined behavior, but from testing seems to simply result in a loss.
 
 ## How to test
 
-Explain how to use your project
+In hardware the chip would be tested by just playing the game.
+To test in simulation, I created a simple python script that just plays the game normally, then tested cases where the player wins and loses at different points in the game. Simply run that python script to observe the game in practice.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+This project assumes the usage of some PMOD buttons and LED outputs for the gameplay. The input and output signals are active-high, but that can be changed fairly easily by changing the code to invert the btnX_UNSAFE and LedX signals.
+
+All inputs are buffered to ensure synchronicity and prevent metastability, and all of the logic operates on positive edge detection, so the latency and button held time should not matter.
