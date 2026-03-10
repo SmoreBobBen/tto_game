@@ -64,6 +64,6 @@ Simulation notes:
 
 ## External hardware
 
-This project assumes the usage of some PMOD buttons and LED outputs for the gameplay. The input and output signals are active-high, but that can be changed fairly easily by changing the code to invert the btnX_UNSAFE and LedX signals.
+This project assumes the usage of some PMOD buttons and LED outputs for the gameplay. The input and output signals are active-high, but that can be changed fairly easily by changing the code to invert the btnX\_UNSAFE and LedX signals.
 
 All inputs are buffered to ensure synchronicity and prevent metastability, and all of the logic operates on positive edge detection, so the latency and button held time should not matter.
