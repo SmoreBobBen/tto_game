@@ -54,7 +54,7 @@ This is an implementation for a basic memory game using buttons and lights. The 
 
 ## How to test
 
-In hardware the chip would be tested by just playing the game.
+In hardware the chip would be tested by just playing the game. 
 To test in simulation, I created a simple python script that just plays the game normally, then tested cases where the player wins and loses at different points in the game. Simply run that python script to observe the game in practice.
 
 Simulation notes:
