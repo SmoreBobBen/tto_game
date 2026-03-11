@@ -258,6 +258,8 @@ module tt_um_memgame_smorebob (
                 end
                 default: goodbtn = 0;
             endcase
+        end else begin
+            goodbtn = 0;
         end
     end
     assign badbtn_e = anybtn_e & (~goodbtn);
